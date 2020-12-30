@@ -1,0 +1,49 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "TESTING",
+  "dependencies": {
+    "fibers": "^4.0.1",
+    "npm": "^6.14.4"
+  },
+  "devDependencies": {
+    "@serenity-js/assertions": "^2.17.4",
+    "@serenity-js/console-reporter": "^2.17.4",
+    "@serenity-js/core": "^2.17.4",
+    "@serenity-js/mocha": "^2.17.4",
+    "@serenity-js/protractor": "^2.17.4",
+    "@serenity-js/rest": "^2.17.4",
+    "@serenity-js/serenity-bdd": "^2.17.4",
+    "@slack/webhook": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-arrays": "^2.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.2.1",
+    "chai-roughly": "^1.0.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.17.1",
+    "fakerator": "^0.3.0",
+    "http-headers": "^3.0.2",
+    "is-ci": "^2.0.0",
+    "mocha": "^8.0.1",
+    "mocha-slack-reporter": "0.0.8",
+    "moment": "^2.23.0",
+    "npm-failsafe": "^0.4.1",
+    "protractor": "^7.0.0",
+    "protractor-slack-plugin": "0.0.1",
+    "random-number": "0.0.9",
+    "slack-node": "^0.1.8",
+    "supertest": "^4.0.2"
+  },
+  "scripts": {
+    "clean": "rimraf target",
+    "test:api": "failsafe clean test:update-serenity webdriver-manager:update test:acceptance test:report",
+    "webdriver-manager:update": "webdriver-manager update",
+    "test:execute": "protractor protractor.conf.js",
+    "test:update-serenity": "serenity-bdd update --ignoreSSL",
+    "test:acceptance": "protractor protractor.conf.js",
+    "test:report": "serenity-bdd run",
+    "protractor": "protractor protractor.conf.js"
+  }
+}
